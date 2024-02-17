@@ -1,0 +1,238 @@
+<!-- https://tailwindcss.com/docs/installation -->
+
+
+<html lang="en">
+
+<head>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send ridiculously overpriced messages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <a href="/leaderboard">
+        <div id="sticky-banner" tabindex="-1"
+            class="fixed top-0 left-0 z-50 flex justify-between w-full p-4 border-b border-gray-200 bg-black dark:bg-gray-700 dark:border-gray-600">
+            <div class="flex items-center mx-auto">
+                <p class="flex items-center text-sm font-normal text-white dark:text-gray-400">
+                    <span>the most expensive text message ever sent is $100</span>
+                </p>
+            </div>
+            <div class="flex items-center">
+            </div>
+        </div>
+    </a>
+</header>
+
+<body>
+    <div class="flex h-screen justify-center items-center px-10 py-4">
+        <div class="text-center"> <!-- ⬅️ THIS DIV WILL BE CENTERED -->
+            <p class="leading-loose text-8xl font-serif mb-8"> <!-- Added mb-8 class -->
+                expensive messages
+            </p>
+            <p class="leading-loose text-primary font-serif mb-4"> <!-- Added mb-4 class -->
+                why send $1,000 messages? because you can. also, no takebacksies. no refunds.
+            </p>
+            <form class="outline-none">
+
+                <!-- Create Multipage Form and Post Form Upon Completion -->
+
+                <script>
+
+                    sms = {
+                        senderEmail: undefined,
+                        senderName: undefined,
+                        senderCC: "+1",
+                        senderPhone: "temp_phone",
+                        senderTel: undefined,
+                        receiverName: undefined,
+                        receiverCC: "+1",
+                        receiverPhone: "temp_phone",
+                        receiverTel: undefined,
+                        message: "",
+                        price: undefined,
+                        couponCode: undefined,
+                        discount: false,
+                        sent: false,
+                    }
+                    function validatePhoneNumber(phoneNumber) {
+
+                        <!-- Validate Phone Number using intl-tel-input -->
+
+                    }
+
+                    function showError(errorMessage) {
+                        var x = document.getElementById(errorMessage);
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                        }
+                    }
+
+                    function hideError(errorMessage) {
+                        var x = document.getElementById(errorMessage);
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+                        }
+                    }
+
+                    function showSuccess(errorMessage, successMessage) {
+                        var x = document.getElementById(errorMessage);
+                        var y = document.getElementById(successMessage);
+                        if (y.style.display === "none") {
+                            y.style.display = "block";
+                            x.style.display = "none";
+                        }
+                    }
+
+                    function nextForm(currentPageID, nextPageID) {
+                        var x = document.getElementById(nextPageID);
+                        var y = document.getElementById(currentPageID);
+                        if (y.style.display === "flex") {
+                            y.style.display = "none";
+                            x.style.display = "flex";
+                        }
+                    }
+
+                    function validatePrice(inputPrice) {
+                        if (inputPrice < 10 || inputPrice * 100 % 1 !== 0) {
+                            showError('priceError');
+                            return false;
+                        } else {
+                            hideError('priceError');
+                            return true;
+                        }
+                    }
+                    
+                    function validateMessage(inputMessage, currentPageID, nextPageID) {
+                        if(inputMessage.length > 0 && inputMessage.length < 480) {
+                            nextForm(currentPageID, nextPageID);
+                            hideError('inputError');
+                            return true;
+                        }
+                        else {
+                            showError('inputError');    
+                            return false;
+                        }
+                    }
+
+                </script>
+
+                <!-- Page 1 of Form -->
+
+                <div id="pageOne" class="flex items-center border-black border-2" style="display: flex">
+                    <select id="countries" onchange="sms.receiverCC = this.value;"
+                        class="border-none text-gray-900 text-sm block py-3 px-5 outline-none">
+                        <option value="+1">+1 (US)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+1">+1 (CA)</option>
+                        <option value="+61">+61 (AU)</option>
+                        <option value="+64">+64 (NZ)</option>
+                    </select>
+                    <input oninput="sms.receiverPhone = this.value;"
+                        class="appearance-none bg-transparent border-none w-full text-black py-3 px-4 leading-tight outline-none"
+                        type="text" placeholder="your recipient's phone number" aria-label="contact-tel">
+                    <button onclick="
+                    sms.receiverTel = sms.receiverCC + sms.receiverPhone; 
+                    validatePhoneNumber();
+                    nextForm('pageOne', 'pageTwo');"
+                        class="flex-shrink-0 border-l-2 border-black hover:bg-black text-sm text-black hover:text-white py-3 px-8"
+                        type="button">
+                        Let's Go
+                    </button>
+                </div>
+
+                <!-- Page 2 of Form -->
+
+                <div id="pageTwo" class="flex flex-col border-black border-2" style="display: none">
+                    <textarea oninput="sms.message = this.value;"
+                        class="appearance-none bg-transparent border-none text-black py-3 px-4 leading-tight outline-none resize-y"
+                        placeholder="enter your message here" aria-label="contact-tel"></textarea>
+                    <button onclick="
+                    validateMessage(sms.message,'pageTwo', 'pageThree')"
+                        class="flex-shrink-0 border-t-2 border-black hover:bg-black text-sm text-black hover:text-white py-3 px-8"
+                        type="button">
+                        Keep Going
+                    </button>
+                </div>
+
+                <div id="inputError" class="flex w-full justify-center text-sm bg-red-800 text-white py-1 px-4 mt-2" style="display:none">
+                    <p>please enter a valid message. your message should not be longer than 480 characters.</p>
+                </div>
+
+                <!-- Page 3 of Form -->
+
+                <div id="pageThree" class="flex flex-col w-full" style="display: none">
+
+                    <div class="flex items-center flex-wrap justify-center">
+                        <button value="100" onclick="sms.price = this.value"
+                            class="flex-shrink-0 border-black border-2 hover:bg-black text-sm text-black hover:text-white py-3 px-10 mb-4 md:mb-0 mr-4"
+                            type="button">
+                            $100
+                        </button>
+                        <button value="500" onclick="sms.price = this.value"
+                            class="flex-shrink-0 border-l-2 border-black border-2 hover:bg-black text-sm text-black hover:text-white py-3 px-10 mb-4 md:mb-0 mr-4"
+                            type="button">
+                            $500
+                        </button>
+                        <button value="1000" onclick="sms.price = this.value"
+                            class="flex-shrink-0 border-l-2 border-black border-2 hover:bg-black text-sm text-black hover:text-white py-3 px-10 mb-4 md:mb-0 mr-4"
+                            type="button">
+                            $1000
+                        </button>
+
+                        <div class="flex items-center border-black border-2" style="display: flex">
+                            <p class="ml-3">$</p>
+                            <input oninput="
+                            sms.price = this.value;
+                            "
+                                class="appearance-none bg-transparent border-none text-black py-3 px-4 leading-tight outline-none md:mb-0 md:mr-4"
+                                type="text" placeholder="custom price" aria-label="price">
+                            <button onclick="validatePrice(sms.price);"
+                                class="flex-shrink-0 border-l-2 border-black hover:bg-black text-sm text-black hover:text-white py-3 px-4"
+                                type="button">
+                                &gt;
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="priceError" class="flex justify-center text-sm bg-red-800 text-white py-1 px-4 mt-2" style="display:none">
+                        <p>uhm, we're selling ridiculously overpriced messages. please enter a valid price greater than $10.</p>
+                    </div>        
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
+</body>
+
+
+<footer class="flex justify-center items-center bg-white m-4 dark:bg-gray-800">
+    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-800 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="/faqs" class="mr-4 hover:underline md:mr-6 ">FAQs</a>
+        </li>
+        <li>
+            <a href="/leaderboard" class="mr-4 hover:underline md:mr-6">Leaderboard</a>
+        </li>
+        <li>
+            <a href="mailto:hello@expensivemessages.com" class="mr-4 hover:underline md:mr-6">Support</a>
+        </li>
+        <li>
+            <a href="/privacy" class="mr-4 hover:underline md:mr-6">Privacy</a>
+        </li>
+        <li>
+            <a href="/terms" class="hover:underline">Terms</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+
+</html>

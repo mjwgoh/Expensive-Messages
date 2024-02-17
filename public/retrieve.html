@@ -1,0 +1,131 @@
+<!-- https://tailwindcss.com/docs/installation -->
+
+
+<html lang="en">
+
+<head>
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send ridiculously overpriced messages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <a href="/leaderboard">
+        <div id="sticky-banner" tabindex="-1"
+            class="fixed top-0 left-0 z-50 flex justify-between w-full p-4 border-b border-gray-200 bg-black dark:bg-gray-700 dark:border-gray-600">
+            <div class="flex items-center mx-auto">
+                <p class="flex items-center text-sm font-normal text-white dark:text-gray-400">
+                    <span>the most expensive text message ever sent is $100</span>
+                </p>
+            </div>
+            <div class="flex items-center">
+            </div>
+        </div>
+    </a>
+</header>
+
+<body>
+    <div class="flex h-screen justify-center items-center px-10 py-4">
+        <div class="text-center"> <!-- ⬅️ THIS DIV WILL BE CENTERED -->
+            <p class="leading-loose text-8xl font-serif mb-8"> <!-- Added mb-8 class -->
+                expensive messages
+            </p>
+            <p class="leading-loose text-primary font-serif mb-4"> <!-- Added mb-4 class -->
+                retrieve previously sent messages with your email address.
+            </p>
+            <form class="outline-none">
+
+                <script type = "text/javascript">
+
+                    let email = "";
+
+                    function validateEmail(emailInput) {
+                        var atpos = emailInput.indexOf("@");
+                        var dotpos = emailInput.lastIndexOf(".");
+                      
+                        if (atpos < 1 || (dotpos - atpos < 2)) {
+                          showError(errorMsg);
+                          return false;
+                        } else {
+                          showSuccess(errorMsg, emailSentMsg);
+                          return true;
+                        }
+                      }
+                      
+                       function showError(errorMessage) {
+                        var x = document.getElementById(errorMessage);
+                        if (x.style.display === "none") {
+                          x.style.display = "block";
+                        }
+                      }
+
+                      function showSuccess(errorMessage, successMessage) {
+                        var x = document.getElementById(errorMessage);
+                        var y = document.getElementById(successMessage);
+                        if (y.style.display === "none") {
+                            y.style.display = "block";
+                            x.style.display = "none";
+                        }
+                      }
+
+
+                 </script>                 
+
+
+                <!-- Page 1 of Form -->
+
+                <div class="flex items-center border-black border-2" style="display:flex">
+                    <input oninput="email = this.value;"
+                        class="appearance-none bg-transparent border-none w-full text-black py-3 px-4 leading-tight outline-none"
+                        type="text" placeholder="enter your email address" aria-label="email">
+                    <button onclick="validateEmail(email)"
+                        class="flex-shrink-0 border-l-2 border-black bg-black hover:bg-black text-sm text-black hover:text-white py-3 px-8"
+                        type="button">
+                        Retrieve Messages
+                    </button>
+                </div>
+                
+                <div id="errorMsg" class="flex w-full justify-center text-sm bg-red-800 text-white py-1 px-4" style="display:none">
+                    <p>please enter a valid email</p>
+                </div>
+
+                <div id="emailSentMsg" class="flex w-full justify-center text-sm bg-green-600 text-white py-1 px-4" style="display:none">
+                    <p>if your email is valid, you would receive a unique link to retrieve your messages</p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
+</body>
+
+
+<footer class="flex justify-center items-center bg-white m-4 dark:bg-gray-800">
+    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-800 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="/faqs" class="mr-4 hover:underline md:mr-6 ">FAQs</a>
+        </li>
+        <li>
+            <a href="/leaderboard" class="mr-4 hover:underline md:mr-6">Leaderboard</a>
+        </li>
+        <li>
+            <a href="mailto:hello@expensivemessages.com" class="mr-4 hover:underline md:mr-6">Support</a>
+        </li>
+        <li>
+            <a href="/privacy" class="mr-4 hover:underline md:mr-6">Privacy</a>
+        </li>
+        <li>
+            <a href="/terms" class="hover:underline">Terms</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+
+</html>

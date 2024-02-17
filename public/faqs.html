@@ -1,0 +1,156 @@
+<!-- https://tailwindcss.com/docs/installation -->
+
+<html lang="en">
+<head>
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expensive messages | frequently asked questions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <a href="/">
+        <div id="sticky-banner" tabindex="-1" class="fixed top-0 left-0 z-50 flex justify-between w-full p-4 border-b border-gray-200 bg-black dark:bg-gray-700 dark:border-gray-600">
+            <div class="flex items-center mx-auto">
+                <p class="flex items-center text-sm font-normal text-white dark:text-gray-400">
+                    <span>back to homepage</span>
+                </p>
+            </div>
+            <div class="flex items-center">
+            </div>
+        </div>
+    </a>    
+</header>
+
+<body>
+  <div class="flex h-screen justify-center items-center px-10 py-4">
+    <div class="text-center"> <!-- ⬅️ THIS DIV WILL BE CENTERED -->
+        <p class="leading-loose text-8xl font-serif mb-8"> <!-- Added mb-8 class -->
+            frequently asked questions
+        </p>
+        <p class="leading-loose text-primary mb-4"> <!-- Added mb-4 class -->
+            further questions? contact us at <a class="hover:underline underline-offset-1" href="mailto:hello@expensivemessages.com">hello@expensivemessages.com</a> 
+        </p>
+    </div>
+  </div>
+
+  <div class="px-20 pb-10">
+
+    <div id="accordion-color" data-accordion="collapse" data-active-classes="p-10 bg-black">
+        <h2 id="accordion-color-heading-1">
+          <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 hover:bg-black hover:text-white" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
+            <span>💰 Can I get a refund?</span>
+            <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </button>
+        </h2>
+        <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+          <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+            <p class="mb-2 text-gray-500 dark:text-gray-400">Uhm, no. No takebacksies, no refunds.</p>
+            <p class="mb-2 text-gray-500 dark:text-gray-400"> P.S. if you are a victim of credit card fraud, please contact us at <a class="hover:underline hover:underline-offset-2" href="mailto:hello@expensivemessages.com">hello@expensivemessages.com</a>.</p>
+          </div>
+        </div>
+
+        <h2 id="accordion-color-heading-2">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 hover:bg-black hover:text-white" data-accordion-target="#accordion-color-body-2" aria-expanded="true" aria-controls="accordion-color-body-2">
+              <span>💬 I lost my unique message link. Help!</span>
+              <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">You may retrieve previously sent messages here. Please note that if your personal phone number has not been verified, the only way to retrieve the message would be to use the recipient's contact number.</p>
+            </div>
+          </div>
+
+          <h2 id="accordion-color-heading-3">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 hover:bg-black hover:text-white" data-accordion-target="#accordion-color-body-3" aria-expanded="true" aria-controls="accordion-color-body-3">
+              <span>❗ Who created this ridiculously useless website?</span>
+              <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">Excuse you? Rude much? You may yell at me on <a class="hover:underline hover:underline-offset-4" href="https://twitter.com/jwgoh/">Twitter.</a></p>
+            </div>
+          </div>
+
+          <h2 id="accordion-color-heading-5">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 hover:bg-black hover:text-white" data-accordion-target="#accordion-color-body-5" aria-expanded="true" aria-controls="accordion-color-body-5">
+              <span>🏆 I just sold my kidney to send a message. Why am I not on the leaderboard?</span>
+              <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-5" class="hidden" aria-labelledby="accordion-color-heading-5">
+            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">Be patient. This is a luxury store. Our technology artisans have to painstakingly peruse through hundreds of messages before manually selecting your ridiculously overpriced message. This process could take up to a week.</a></p>
+            </div>
+          </div>
+
+          <h2 id="accordion-color-heading-6">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 hover:bg-black hover:text-white" data-accordion-target="#accordion-color-body-6" aria-expanded="true" aria-controls="accordion-color-body-6">
+              <span>🤔 Why did you actually create this website?</span>
+              <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-6" class="hidden" aria-labelledby="accordion-color-heading-6">
+            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                In our modern world, we find ourselves immersed in a culture that places great emphasis on material possessions, using them as a yardstick to gauge our self-worth. 
+                However, it seems rather paradoxical that we should prioritize price tags and branded logos as indicators of value, when in fact, true value lies in the inherent quality and substance of what we possess. 
+                Regrettably, in a society where our self-esteem is intricately tied to the opinions of others, we become fixated on displaying exorbitantly priced watches and extravagantly priced handbags as symbols of status. 
+                This tendency to prioritize expensive possessions serves as a satirical commentary on the skewed importance we assign to material goods, highlighting the disconnect between their actual worth and the value we ascribe to them.
+              </p>
+              <p class="mb-2 text-gray-500 dark:text-gray-400">Well, that, and inflation. Eggs were going for $5 a carton. I needed millionaires with f-you money to subsidize my living costs.</p>
+            <p class="mb-2 text-gray-500 dark:text-gray-400">Generated by ChatGPT.</p>
+            </div>
+          </div>
+
+
+        <h2 id="accordion-color-heading-4">
+          <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-blue-200 hover:bg-black hover:text-white" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
+            <span>🏷️ Are there any promo codes?</span>
+            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </button>
+        </h2>
+        <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+          <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+            <p class="mb-2 text-gray-500 dark:text-gray-400">Son, we're selling ridiculously overpriced messages. This is a luxury boutique, not your neighborhood outlet mall. Think Erewhon, not Trader Joe's.</p> 
+            <p class="mb-2 text-gray-500 dark:text-gray-400">Fine, since you asked. You may use code CHEAPMESSAGES to get 50% off your ridiculously overpriced message. Note that you may end up getting a diffusion line product.</p>
+          </div>
+        </div>
+        
+      </div>
+
+  </div>  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
+</body>
+
+
+<footer class="flex justify-center items-center bg-white m-4 dark:bg-gray-800">
+    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-800 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="/faqs" class="mr-4 hover:underline md:mr-6 ">FAQs</a>
+        </li>
+        <li>
+            <a href="/leaderboard" class="mr-4 hover:underline md:mr-6">Leaderboard</a>
+        </li>
+        <li>
+            <a href="mailto:hello@expensivemessages.com" class="mr-4 hover:underline md:mr-6">Support</a>
+        </li>
+        <li>
+            <a href="/privacy" class="mr-4 hover:underline md:mr-6">Privacy</a>
+        </li>
+        <li>
+            <a href="/terms" class="hover:underline">Terms</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+
+</html>
