@@ -8,12 +8,12 @@ Unfortunately, Mashable never called.
 
 *Frontend*
 
-JavaScript: Powers the dynamic functionalities of the web application, ensuring a smooth and interactive user experience.
-HTML: Structures the content of the web application, laying out the foundation for the web pages.
-CSS: Styles the web application, providing a visually appealing and intuitive user interface.
+- JavaScript: Powers the dynamic functionalities of the web application, ensuring a smooth and interactive user experience.
+- HTML: Structures the content of the web application, laying out the foundation for the web pages.
+- CSS: Styles the web application, providing a visually appealing and intuitive user interface.
 
 *Backend*
 
-Pydantic: For data validation and settings management, ensuring that all data processed through the API is valid and conforms to specified schemas.
-PyMongo: Facilitates interaction with the MongoDB database, handling data storage and retrieval efficiently.
-FastAPI: Serves as the core framework for the backend, offering features like API route declarations, dependency injection, and automatic OpenAPI documentation.
+- Pydantic: For data validation and settings management, ensuring that all data processed through the API is valid and conforms to specified schemas.
+- PyMongo: Facilitates interaction with the MongoDB database, handling data storage and retrieval efficiently.
+- FastAPI: Serves as the core framework for the backend, offering features like API route declarations, dependency injection, and automatic OpenAPI documentation.
